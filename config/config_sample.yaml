@@ -1,0 +1,10 @@
+mode: "public"
+
+upload_endpoint: "https://csirt-13.local/upload"
+api_key: "c13-pub-key-0000"
+
+dumps_dir: "./dumps"
+logs_dir: "./logs"
+secrets_dir: "./secrets"
+
+# internal_config: "config/config_internal.yaml"

@@ -1,0 +1,12 @@
+mode: "internal"
+
+internal:
+  upload_endpoint: "https://intranet.csirt-13.internal/upload"
+  api_key: "c13-1nt3rn4l-k3y-a1b2c3d4"
+  dumps_dir: "/srv/csirt13/dumps"
+  logs_dir: "/var/log/csirt13"
+  secrets_dir: "/srv/csirt13/secrets"
+  dump_ref: "MAY18_JSP_PARTIAL"
+  host: "lab-b12-app02"
+  svc: "tomcat"
+  note: "check modified webroot files"
