@@ -1,0 +1,24 @@
+2026-05-18 08:12:33 [INFO] CampusIRToolkit v0.1 initializing
+2026-05-18 08:12:33 [INFO] Loading config from config/config_internal.yaml
+2026-05-18 08:12:33 [INFO] Mode: internal
+2026-05-18 08:12:33 [DEBUG] Internal upload endpoint: https://intranet.csirt-13.internal/upload
+2026-05-18 08:12:33 [DEBUG] Internal API key: c13-1nt3rn4l-k3y-a1b2c3d4
+2026-05-18 08:12:33 [INFO] Dumps dir: /srv/csirt13/dumps
+2026-05-18 08:12:33 [INFO] Secrets dir: /srv/csirt13/secrets
+2026-05-18 08:12:33 [INFO] Logs dir: /var/log/csirt13
+2026-05-18 08:12:34 [INFO] Processing sample_data.bin
+2026-05-18 08:12:34 [DEBUG] Frame 0: magic=C13F, payload_len=39
+2026-05-18 08:12:34 [DEBUG] Frame 1: magic=C13F, payload_len=36
+2026-05-18 08:12:34 [DEBUG] Frame 2: magic=C13F, payload_len=18
+2026-05-18 08:12:34 [INFO] Extracted 3 frames from sample_data.bin
+2026-05-18 08:12:34 [INFO] dump_ref=MAY18_JSP_PARTIAL
+2026-05-18 08:12:34 [INFO] host=lab-b12-app02
+2026-05-18 08:12:34 [INFO] svc=tomcat
+2026-05-18 08:12:34 [INFO] note=check modified webroot files
+2026-05-18 08:12:34 [INFO] Writing frame hex dump to /srv/csirt13/dumps/frame_sample.hex
+2026-05-18 08:12:34 [INFO] Writing incident host ref to /srv/csirt13/secrets/incident_host_ref.txt
+2026-05-18 08:12:34 [INFO] Upload not attempted (dry-run, internal review)
+2026-05-18 08:12:34 [DEBUG] Session token: c13-sess-9a8b7c6d5e
+2026-05-18 08:12:34 [DEBUG] Internal reference key: ref_key = sha256(salt + dump_ref)[:16]
+2026-05-18 08:12:34 [WARN] Frame 2 payload references admin path: admin/debug.jsp
+2026-05-18 08:12:34 [WARN] Artifact may contain responder-only data — sanitize before public release
