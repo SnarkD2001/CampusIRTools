@@ -39,12 +39,21 @@ Supported modes:
 
 ```
 CampusIRTools/
-├── campusir/         # Core Python package
-├── config/           # Configuration templates
-├── logs/             # Debug and audit logs
-├── old/              # Legacy/deprecated tools
-├── sample_data.bin   # Example signal data
+├── campusir/             # Core Python package
+├── config/               # Configuration templates
+├── incident_artifacts/   # Investigation case materials
+├── logs/                 # Debug and audit logs
+├── old/                  # Legacy/deprecated tools
+├── sample_data.bin       # Example signal data
 └── requirements.txt
+```
+
+## Verification
+
+```bash
+python -m campusir.cli --help
+python -m campusir.cli analyze sample_data.bin
+cat dumps/frame_sample.hex
 ```
 
 ## License
