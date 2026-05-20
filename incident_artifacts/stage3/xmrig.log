@@ -1,0 +1,15 @@
+[2026-05-18 09:03:15]  net  use pool pool.supportxmr.com:3333
+[2026-05-18 09:03:15]  net  new job from pool.supportxmr.com:3333 diff 250000 algo rx/0
+[2026-05-18 09:03:15]  cpu  use argon2 implementation AVX2
+[2026-05-18 09:03:16]  cpu  started (8 threads)
+[2026-05-18 09:03:16]  cpu  huge pages 100% 8/8
+[2026-05-18 09:03:16]  cpu  accepted (1/0) diff 250000
+[2026-05-18 09:03:16]  net  new job from pool.supportxmr.com:3333 diff 250000 algo rx/0
+[2026-05-18 09:03:46]  cpu  accepted (2/0) diff 250000
+[2026-05-18 09:04:16]  cpu  accepted (3/0) diff 250000
+[2026-05-18 09:04:16]  miner  speed 10.5k hashrate (10s) 11.2k hashrate (60s)
+[2026-05-18 09:04:46]  cpu  accepted (4/0) diff 250000
+[2026-05-18 09:05:16]  cpu  accepted (5/0) diff 250000
+[2026-05-18 09:05:16]  net  new job from pool.supportxmr.com:3333 diff 250000 algo rx/0
+[2026-05-18 09:05:16]  miner  speed 11.8k hashrate (10s) 11.5k hashrate (60s)
+[2026-05-18 09:05:46]  cpu  accepted (6/0) diff 250000

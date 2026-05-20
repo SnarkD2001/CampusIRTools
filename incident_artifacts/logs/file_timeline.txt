@@ -1,0 +1,13 @@
+File modification timeline — lab-b12-app02 — 2026-05-18
+
+2026-05-18 03:12:44 +0800  MODIFY  /opt/tomcat/webapps/ROOT/admin/debug.jsp
+2026-05-18 03:12:44 +0800  CREATE  /opt/tomcat/webapps/ROOT/admin/debug.jsp (size: 2147 bytes)
+2026-05-18 03:13:01 +0800  MODIFY  /opt/tomcat/webapps/ROOT/assets/error.jsp
+2026-05-18 03:13:01 +0800  ACCESS  /opt/tomcat/webapps/ROOT/assets/error.jsp
+2026-05-18 08:15:22 +0800  ACCESS  /opt/tomcat/logs/localhost_access_log.2026-05-18.txt
+2026-05-18 09:02:11 +0800  ACCESS  /opt/tomcat/webapps/ROOT/assets/error.jsp
+2026-05-18 09:02:12 +0800  ACCESS  /opt/tomcat/webapps/ROOT/admin/debug.jsp
+2026-05-18 09:02:15 +0800  ACCESS  /opt/tomcat/webapps/ROOT/admin/debug.jsp (repeated)
+2026-05-18 09:03:00 +0800  CREATE  /tmp/.sysd
+2026-05-18 09:03:02 +0800  CREATE  /tmp/.config.json
+2026-05-18 09:03:10 +0800  MODIFY  /var/spool/cron/crontabs/tomcat

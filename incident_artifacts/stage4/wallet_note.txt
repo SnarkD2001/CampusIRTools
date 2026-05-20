@@ -1,0 +1,18 @@
+# Wallet Note — Financial Trail
+
+You've traced the attack chain from a malicious JSP webshell to a cryptojacking miner, and finally to a wallet address embedded in the miner configuration.
+
+The attacker left their wallet address in the clear:
+
+> `0x71C7656EC7ab88b098defB751B7401B5f6d8976F`
+
+This address is the financial sink for all mined cryptocurrency.
+
+## Questions for the Next Stage
+
+- **Which blockchain network does this address belong to?** (Hint: look at the address format)
+- **Why can this address be left publicly in a config file without risking loss of funds?**
+- **What is the difference between a wallet address and a private key?**
+- **If you were to receive a reward at this type of address, what network information would you need to provide?**
+
+The trail ends here — but the learning is just beginning. Move to `blockchain_brief.md` for foundational concepts, and `reward_instructions.md` for the final challenge.

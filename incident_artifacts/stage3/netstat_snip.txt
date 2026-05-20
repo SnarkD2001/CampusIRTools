@@ -1,0 +1,8 @@
+Active Internet connections (ESTABLISHED)
+
+Proto Recv-Q Send-Q  Local Address          Foreign Address        State
+tcp        0     88    172.16.5.12:3333      172.16.5.14:443        ESTABLISHED  (curl → C2)
+tcp        0      0    172.16.5.12:42158     91.121.12.34:3333     ESTABLISHED  (/tmp/.sysd → pool.supportxmr.com)
+tcp        0      0    172.16.5.12:42159     91.121.12.34:3333     ESTABLISHED  (/tmp/.sysd → pool.supportxmr.com)
+tcp        0      0    172.16.5.12:42160     91.121.12.34:3333     ESTABLISHED  (/tmp/.sysd → pool.supportxmr.com)
+tcp6       0      0    172.16.5.12:8080      :::*                   LISTEN       (java/tomcat)

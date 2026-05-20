@@ -1,0 +1,30 @@
+# Host Forensics Brief — Stage 3
+
+**Case:** MAY18_JSP_PARTIAL — Host-Level Investigation
+**Previous Stage:** Web application compromise confirmed (admin/debug.jsp — Godzilla-style JSP webshell)
+**Escalation:** Host-level forensics initiated on lab-b12-app02
+
+## Observations
+
+1. **CPU Anomaly** — System CPU sustained at 95-99% since approximately 09:03 UTC.
+   - Process `/tmp/.sysd` (masked as system network daemon) consuming 92.3% CPU.
+   - Parent process: java (tomcat) — child process outlived its parent.
+
+2. **Network Connections** — Outbound connections to known mining pool addresses detected.
+   - Port 3333 (stratum) to external IP.
+   - No legitimate campus services use stratum protocol.
+
+3. **Persistence Mechanisms** — Multiple persistence vectors identified:
+   - Cron job under tomcat user
+   - Systemd service unit mimicking system-net.service
+   - Binary stored at `/tmp/.sysd` (not in standard package manager database)
+
+4. **Artifact Correlation** — Process tree confirms the attack chain:
+   - WebShell → curl/wget downloads → binary execution → persistence → mining pool connection
+
+## Next Steps
+
+- Extract and analyze `/tmp/.config.json` for wallet/miner configuration.
+- Confirm the wallet address and mining pool.
+- Trace the 172.16.5.14 C2 for additional indicators.
+- Prepare containment and eradication plan.

@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "url": "stratum+tcp://pool.supportxmr.com:3333",
+            "user": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F.lab-b12-app02",
+            "pass": "x",
+            "rig-id": "lab-b12-app02",
+            "nicehash": false,
+            "keepalive": false,
+            "tls": false
+        }
+    ],
+    "cpu": {
+        "enabled": true,
+        "max-cpu-usage": 95,
+        "donate-level": 1
+    },
+    "api": {
+        "port": 0,
+        "access-token": null
+    },
+    "http": {
+        "enabled": false
+    }
+}

