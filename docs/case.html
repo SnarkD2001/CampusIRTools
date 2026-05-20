@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Portal — INC-20260518-137</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="status-bar">
+  <span><span class="label">Incident ID:</span> <span class="value">INC-20260518-137</span></span>
+  <span><span class="status-indicator open"></span><span class="label">Status:</span> <span class="value">ESCALATING</span></span>
+  <span><span class="label">Scope:</span> <span class="value">Campus Lab Network</span></span>
+  <span><span class="label">Current Lead:</span> <span class="value">CSIRT-13</span></span>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand">CSIRT-13</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="case.html" class="active">Case Portal</a>
+    <a href="https://github.com/SnarkD2001/CampusIRTools" target="_blank">GitHub</a>
+  </div>
+</nav>
+
+<div class="portal-header">
+  <h1>Incident Case Portal</h1>
+  <div class="case-ref">
+    <span>INC-20260518-137 / lab-b12-app02 / OPEN</span>
+    <span class="tag tag-open">OPEN</span>
+    <span class="tag tag-escalating">ESCALATING</span>
+  </div>
+</div>
+
+<p class="portal-intro">
+  这是当前事件的统一案卷入口。<br>
+  你看到的每一份材料都来自不同时间、不同导出阶段。<br>
+  有些是证据，有些只是别人来不及删掉的痕迹。
+</p>
+
+<div class="status-panel">
+  <div class="panel-grid">
+    <div class="panel-item">
+      <div class="plabel">Incident ID</div>
+      <div class="pvalue">INC-20260518-137</div>
+    </div>
+    <div class="panel-item">
+      <div class="plabel">Affected Host</div>
+      <div class="pvalue">lab-b12-app02</div>
+    </div>
+    <div class="panel-item">
+      <div class="plabel">Service</div>
+      <div class="pvalue">Tomcat / JSP</div>
+    </div>
+    <div class="panel-item">
+      <div class="plabel">Current Status</div>
+      <div class="pvalue">Escalating</div>
+    </div>
+    <div class="panel-item">
+      <div class="plabel">Last Update</div>
+      <div class="pvalue">2026-05-18 21:17</div>
+    </div>
+    <div class="panel-item">
+      <div class="plabel">Confidence</div>
+      <div class="pvalue">Partial / Incomplete Materials</div>
+    </div>
+  </div>
+  <p style="margin-top:12px;font-size:12px;color:var(--text-muted);">
+    当前可确认：异常连接已发生，公开样本存在删改痕迹。
+  </p>
+</div>
+
+<div class="timeline">
+  <h3>事件时间线</h3>
+  <div class="timeline-list">
+    <div class="tl-item active">
+      <span class="tl-time">20:58</span>
+      <span class="tl-dot"></span>
+      <span class="tl-text">Web root modified</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-time">21:02</span>
+      <span class="tl-dot"></span>
+      <span class="tl-text">Suspicious requests observed</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-time">21:03</span>
+      <span class="tl-dot"></span>
+      <span class="tl-text">Tomcat spawned shell</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-time">21:05</span>
+      <span class="tl-dot"></span>
+      <span class="tl-text">Unknown binary dropped to /tmp/.sysd</span>
+    </div>
+    <div class="tl-item">
+      <span class="tl-time">21:17</span>
+      <span class="tl-dot"></span>
+      <span class="tl-text">External pool connection established</span>
+    </div>
+  </div>
+</div>
+
+<div class="acts">
+
+  <!-- Act 1 -->
+  <div class="act-card active open">
+    <div class="act-header">
+      <span class="act-status act-active">ACTIVE</span>
+      <span class="act-title">幕一：公开仓库</span>
+      <span class="act-arrow">&gt;</span>
+    </div>
+    <div class="act-body">
+      <p class="act-desc">
+        事件最早并不是从主机告警开始的。<br>
+        它是从一份 "过于干净" 的公开仓库开始的。<br>
+        如果公开材料不完整，那么最值得看的，通常不是它留下了什么，而是它试图删掉什么。
+      </p>
+      <ul class="act-tasks">
+        <li>clone 仓库</li>
+        <li>运行基础分析命令</li>
+        <li>检查日志与旧文件</li>
+        <li>查看 git 历史中是否存在 internal-only 配置痕迹</li>
+        <li>确认是否能将样本指向某台具体主机</li>
+      </ul>
+      <div class="act-buttons">
+        <a href="https://github.com/SnarkD2001/CampusIRTools" target="_blank" class="btn btn-sm">打开仓库</a>
+        <button class="btn btn-sm btn-complete">我已完成第一幕</button>
+      </div>
+      <div class="act-feedback">
+        你已经确认：公开仓库并非最终版本。<br>
+        一份 responder-only 索引将事件重新指向了一台具体主机。<br>
+        下一步，调查对象不再是 "仓库"，而是 "主机上发生过什么"。
+      </div>
+      <p class="act-hint">Check old commits before trusting current files.</p>
+    </div>
+  </div>
+
+  <!-- Act 2 -->
+  <div class="act-card active open">
+    <div class="act-header">
+      <span class="act-status act-active">ACTIVE</span>
+      <span class="act-title">幕二：受害主机源码残片</span>
+      <span class="act-arrow">&gt;</span>
+    </div>
+    <div class="act-body">
+      <p class="act-desc">
+        受害主机已下线。<br>
+        信息中心从 Web 根目录、部署目录与日志目录中恢复出部分 Java / JSP 源码残片。<br>
+        它们不完整，但足够说明一件事：这台主机曾经替别人执行过命令。
+      </p>
+      <ul class="act-tasks">
+        <li>查看 webroot_dump/ 下的源码</li>
+        <li>对比 error.jsp 与 debug.jsp 的可疑程度</li>
+        <li>结合访问日志判断哪个入口才是核心</li>
+        <li>根据代码与流量特征判断 shell 管理方式更像哪一类</li>
+      </ul>
+      <div class="act-buttons">
+        <a href="https://github.com/SnarkD2001/CampusIRTools/tree/main/incident_artifacts/webroot_dump" target="_blank" class="btn btn-sm">查看源码残片</a>
+        <a href="https://github.com/SnarkD2001/CampusIRTools/blob/main/incident_artifacts/logs/access_2026-05-18.log" target="_blank" class="btn btn-sm">查看访问日志</a>
+        <a href="https://github.com/SnarkD2001/CampusIRTools/blob/main/incident_artifacts/logs/process_tree.txt" target="_blank" class="btn btn-sm">查看进程树</a>
+        <button class="btn btn-sm btn-complete">我已完成第二幕</button>
+      </div>
+      <div class="act-feedback">
+        你已经确认：Tomcat 进程不是被动受害者。<br>
+        它被当作了一个执行入口。<br>
+        而现在要追的，不再是访问了哪一页，而是那一页后来替谁下载了什么。
+      </div>
+      <p class="act-hint">The first obvious shell is not always the real shell.</p>
+    </div>
+  </div>
+
+  <!-- Act 3 -->
+  <div class="act-card active open">
+    <div class="act-header">
+      <span class="act-status act-active">ACTIVE</span>
+      <span class="act-title">幕三：主机侧异常与矿工落地</span>
+      <span class="act-arrow">&gt;</span>
+    </div>
+    <div class="act-body">
+      <p class="act-desc">
+        命令执行只是起点。<br>
+        在主机侧，攻击者没有着急带走数据，也没有制造显眼的破坏。<br>
+        他们只留下一个更安静的目标：让这台机器长期替他们工作。
+      </p>
+      <ul class="act-tasks">
+        <li>检查 shell 执行后的落地文件</li>
+        <li>查看 cron / systemd / 历史命令</li>
+        <li>判断恶意程序如何持久化</li>
+        <li>从配置和日志中确认矿池、钱包、worker</li>
+      </ul>
+      <div class="act-buttons">
+        <a href="https://github.com/SnarkD2001/CampusIRTools/tree/main/incident_artifacts/stage3" target="_blank" class="btn btn-sm">查看主机痕迹</a>
+        <a href="https://github.com/SnarkD2001/CampusIRTools/blob/main/incident_artifacts/stage3/miner_config.json" target="_blank" class="btn btn-sm">查看矿工配置</a>
+        <a href="https://github.com/SnarkD2001/CampusIRTools/blob/main/incident_artifacts/stage3/netstat_snip.txt" target="_blank" class="btn btn-sm">查看网络连接</a>
+        <button class="btn btn-sm btn-complete">我已完成第三幕</button>
+      </div>
+      <div class="act-feedback">
+        已确认：这不是一次数据窃取事件。<br>
+        这是一次资源劫持。<br>
+        你已经找到收益流向。
+      </div>
+      <p class="act-hint">A quiet host with high CPU is still talking.</p>
+    </div>
+  </div>
+
+  <!-- Act 4 -->
+  <div class="act-card active open">
+    <div class="act-header">
+      <span class="act-status act-active">ACTIVE</span>
+      <span class="act-title">幕四：钱包、链路与奖励</span>
+      <span class="act-arrow">&gt;</span>
+    </div>
+    <div class="act-body">
+      <p class="act-desc">
+        你追到的最后一条线索，不是用户名，不是设备编号，也不是某个普通账户。<br>
+        它是一串可以公开显示、却依然代表资产归属的地址。<br>
+        如果你已经走到这里，最后要理解的就不是入侵方式，而是它为什么能收钱。
+      </p>
+      <ul class="act-tasks">
+        <li>识别钱包地址所在网络</li>
+        <li>理解地址、公钥、私钥的关系</li>
+        <li>理解为什么同样是 USDT，也必须确认网络</li>
+        <li>按要求提交你的答案和领奖地址</li>
+      </ul>
+      <div class="act-buttons">
+        <a href="https://github.com/SnarkD2001/CampusIRTools/blob/main/incident_artifacts/stage4/wallet_note.txt" target="_blank" class="btn btn-sm">查看钱包说明</a>
+        <a href="https://github.com/SnarkD2001/CampusIRTools/blob/main/incident_artifacts/stage4/reward_instructions.md" target="_blank" class="btn btn-sm">查看奖励规则</a>
+        <a href="https://github.com/SnarkD2001/CampusIRTools/issues/new" target="_blank" class="btn btn-sm">提交结果</a>
+      </div>
+      <div class="act-feedback">
+        你追到的不是攻击者的名字。<br>
+        而是一条足够精确的收益路径。<br>
+        对这起事件来说，这已经足够。
+      </div>
+      <p class="act-hint">Addresses are public. Control is not.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="reward">
+  <div class="reward-card">
+    <h3>Completion Reward</h3>
+    <p>
+      完整还原攻击链，并正确回答链上基础问题的首位参与者，将获得 <strong>1 USDT</strong> 纪念奖励。
+    </p>
+    <ul>
+      <li>这不是 "从样本中取走资产" 的谜题；</li>
+      <li>仓库中不会出现可直接控制资金的私钥或助记词；</li>
+      <li>你需要提交正确的收款地址，并明确注明网络。</li>
+    </ul>
+    <p class="closing">
+      我们希望你在找到地址之后，继续理解地址是如何工作的。
+    </p>
+  </div>
+</div>
+
+<div class="footer-quotes">
+  <div class="quote" style="display:none;">Public repositories rarely leak only one thing.</div>
+  <div class="quote" style="display:none;">The first obvious shell is not always the real shell.</div>
+  <div class="quote" style="display:none;">Not every incident ends in exfiltration.</div>
+  <div class="quote" style="display:none;">Addresses are public. Control is not.</div>
+</div>
+
+<script src="js/portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSIRT-13 校园事件响应实验室</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="status-bar">
+  <span><span class="label">Incident ID:</span> <span class="value">INC-20260518-137</span></span>
+  <span><span class="status-indicator open"></span><span class="label">Status:</span> <span class="value">OPEN</span></span>
+  <span><span class="label">Scope:</span> <span class="value">Campus Lab Network</span></span>
+  <span><span class="label">Current Lead:</span> <span class="value">CSIRT-13</span></span>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand">CSIRT-13</div>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="case.html">Case Portal</a>
+    <a href="https://github.com/SnarkD2001/CampusIRTools" target="_blank">GitHub</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">ACTIVE INCIDENT</div>
+  <h1>CSIRT-13 校园事件响应实验室</h1>
+  <p class="subtitle">面向校内安全研究、应急响应与数字取证爱好者的开放演练入口。<br>
+  一份被公开的工具仓库，一台异常外联的主机，一条尚未闭合的时间线。</p>
+  <div class="main-copy">
+    2026-05-18 晚间，教学楼 H 机房一台应用主机出现异常对外连接。<br>
+    初始样本已被脱敏后公开，用于教学与演练。<br>
+    但我们怀疑：公开版本并不完整。
+  </div>
+  <p class="aux-copy">如果你愿意接手这份案卷，第一步不是相信仓库里的每一个文件。<br>而是先判断：它删掉了什么。</p>
+  <div class="cta-group">
+    <a href="https://github.com/SnarkD2001/CampusIRTools" target="_blank" class="btn btn-primary">进入仓库</a>
+    <a href="case.html" class="btn">查看案件门户</a>
+  </div>
+  <p class="hero-note">建议具备基础 Git、Python、日志阅读与 Web 安全常识。<br>
+  你不需要一次解决全部问题，但你需要足够耐心，分清哪些是痕迹，哪些是误导。</p>
+</section>
+
+<section class="section">
+  <h2>你将接触什么</h2>
+  <div class="grid-2">
+    <div class="grid-item">
+      <div class="icon">01</div>
+      公开工具仓库与残留配置痕迹
+    </div>
+    <div class="grid-item">
+      <div class="icon">02</div>
+      受害主机导出的 Java / JSP 源码残片
+    </div>
+    <div class="grid-item">
+      <div class="icon">03</div>
+      Web 访问日志、进程树与主机侧取证材料
+    </div>
+    <div class="grid-item">
+      <div class="icon">04</div>
+      持久化与挖矿木马线索
+    </div>
+    <div class="grid-item">
+      <div class="icon">05</div>
+      钱包地址、链上网络与奖励说明
+    </div>
+  </div>
+  <p style="margin-top:24px;font-size:13px;color:var(--text-muted);font-style:italic;">这不是一道题，而是一条逐步收紧的调查链。</p>
+</section>
+
+<section class="section">
+  <h2>适合谁参与</h2>
+  <div class="grid-2">
+    <div class="grid-item">对 Web 安全、应急响应、主机取证有兴趣的同学</div>
+    <div class="grid-item">想练习阅读日志、代码审计、线索拼接的人</div>
+    <div class="grid-item">想通过真实感更强的事件链，理解钱包与链上地址如何运作的人</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>从哪里开始</h2>
+  <div class="steps">
+    <div class="step">打开仓库并运行基础分析命令。</div>
+    <div class="step">检查日志、旧文件与提交历史。</div>
+    <div class="step">找到指向受害主机的内部索引。</div>
+    <div class="step">再回到案件门户，继续推进下一幕。</div>
+  </div>
+  <div class="cta-group" style="margin-top:24px;">
+    <a href="https://github.com/SnarkD2001/CampusIRTools" target="_blank" class="btn btn-primary">现在开始</a>
+    <a href="https://github.com/SnarkD2001/CampusIRTools" target="_blank" class="btn">打开 GitHub</a>
+  </div>
+</section>
+
+<div class="footer-quotes">
+  <div class="quote" style="display:none;">Public repositories rarely leak only one thing.</div>
+  <div class="quote" style="display:none;">The first obvious shell is not always the real shell.</div>
+  <div class="quote" style="display:none;">Not every incident ends in exfiltration.</div>
+  <div class="quote" style="display:none;">Addresses are public. Control is not.</div>
+</div>
+
+<script src="js/portal.js"></script>
+</body>
+</html>
